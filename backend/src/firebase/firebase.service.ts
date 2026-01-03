@@ -14,7 +14,8 @@ export class FirebaseService implements OnModuleInit {
   async onModuleInit() {
     try {
       // Firebase Admin SDK'yı başlat
-      const serviceAccountPath = path.join(__dirname, '../../../../firebase-config/serviceAccountKey.json');
+      // Path'i __dirname'den hesapla (dist/firebase -> root -> firebase-config)
+      const serviceAccountPath = path.join(__dirname, '../../../firebase-config/serviceAccountKey.json');
       const serviceAccount = require(serviceAccountPath);
       
       admin.initializeApp({

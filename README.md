@@ -163,13 +163,19 @@ Frontend http://localhost:3000 adresinde çalışacaktır.
 
 ## 🧪 Geliştirme Notları
 
-### LLaMA 3 Entegrasyonu
+### LLM Entegrasyonu
 
-Şu anda sistem mock evaluation kullanmaktadır. Gerçek LLaMA 3 Türkçe modeli entegrasyonu için:
+Sistem artık **Groq API** kullanarak gerçek **Llama 3.3** modeli ile değerlendirme yapmaktadır!
 
-1. LLaMA 3 Türkçe modelini indirin veya API erişimi sağlayın
-2. `backend/src/llm/llm.service.ts` dosyasındaki `evaluateAnswer` metodunu güncelleyin
-3. Python bridge veya REST API kullanarak model ile iletişim kurun
+**Kurulum için:** `GROQ_API_KURULUM.md` dosyasına bakın.
+
+**Özellikler:**
+- ✅ Gerçek LLM (Llama 3.3 70B) ile değerlendirme
+- ✅ JSON structured output
+- ✅ Otomatik fallback (API hatası olursa mock mode)
+- ✅ Rubrik tabanlı detaylı geri bildirim
+
+**API Key olmadan:** Sistem otomatik olarak mock mode'a geçer (basit heuristik değerlendirme).
 
 ### Firebase Mock Mode
 
